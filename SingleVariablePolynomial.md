@@ -33,9 +33,10 @@ coefficientsSV poly x
 ```
 
 ### Notes
-- The function handles rational coefficients
+- The function only handles integer coefficients. 
 - Returns BigInteger values (denoted by the N suffix)
 
 ### Related Functions
 - `degreesSV`: Gets the degree of a polynomial
 - `expandSV`: Expands a polynomial expression
+- `Polynomial.coefficients`: Does the exact same thing 
