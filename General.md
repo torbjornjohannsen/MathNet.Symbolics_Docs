@@ -10,9 +10,7 @@ let r = Expression.Number (MathNet.Numerics.BigRational.FromIntFraction (numerat
 The easiest solution seems to be make your own operator out of the above composition, like the example below. Just worth it to note that the library doesn'y natively provide this
 ```fsharp
 // Note that this is just an example operator, but I do recommend choosing one starting with '/' to get the same precedence
-let (/.) n d = Expression.Number (MathNet.Numerics.BigRational.FromIntFraction (n, d))
-
 let (/.) n d = Expression.Number (MathNet.Numerics.BigRational.FromBigIntFraction (n, d))
 ```
 
-where F# can infer that the first is for integers and the second for BigInts. We can then use them as e.g. `1.3*x**2 + 17 /. 21`
+where we use the BigInts version of the function since F# will cast regular integers to that anyway. We can then use them as e.g. `1.3*x**2 + 17 /. 21`
